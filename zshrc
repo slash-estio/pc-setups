@@ -103,19 +103,35 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Created by `pipx` on 2025-09-08 16:47:37
+unsetopt AUTO_CD
+
+# Pipx
 export PATH="$PATH:/home/estio/.local/bin"
+# PyEnv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# Pyenv Config
-eval "$(pyenv init - zsh)"
-pyenv global 3.13
 
+eval "$(pyenv init - zsh)"
+pyenv global 3.13 >/dev/null 2>&1 || pyenv global 3.9.23
 # Poetry Config
 export POETRY_VIRTUALENVS_IN_PROJECT="true"
 
 # Aliases
-alias activate="source .venv/bin/activate" 
-alias venv-create="python -m venv .venv && activate" 
-alias venv-reset="rm -rf .venv && venv-create" 
-alias reload="clear && source ~/.zshrc" 
+## python
+### venv
+alias activate="source .venv/bin/activate"
+alias venv-create="python -m venv .venv && activate"
+alias venv-reset="rm -rf .venv && venv-create"
+### other tools
+alias black="black --line-length 120"
+## misc
+alias reload="clear && source ~/.zshrc"
+## python
+
+# Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Misc
+eval $(thefuck --alias)
