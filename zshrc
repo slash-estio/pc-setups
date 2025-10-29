@@ -105,6 +105,8 @@ source $ZSH/oh-my-zsh.sh
 
 unsetopt AUTO_CD
 
+# Ansible
+export ANSIBLE_CONFIG="~/ansible.cfg"
 # Pipx
 export PATH="$PATH:/home/estio/.local/bin"
 # PyEnv
