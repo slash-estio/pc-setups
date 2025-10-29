@@ -121,6 +121,8 @@ export POETRY_VIRTUALENVS_IN_PROJECT="true"
 # Aliases
 ## docker
 alias docker-ps-simple="docker ps --format \"{{.ID}}\t{{.Names}}\t{{.Status}}\""
+## git
+alias git-root="git rev-parse --show-toplevel"
 ## python
 ### venv
 alias activate="source .venv/bin/activate"
