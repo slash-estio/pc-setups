@@ -119,6 +119,8 @@ pyenv global 3.13 >/dev/null 2>&1 || pyenv global 3.9.23
 export POETRY_VIRTUALENVS_IN_PROJECT="true"
 
 # Aliases
+## docker
+alias docker-ps-simple="docker ps --format \"{{.ID}}\t{{.Names}}\t{{.Status}}\""
 ## python
 ### venv
 alias activate="source .venv/bin/activate"
