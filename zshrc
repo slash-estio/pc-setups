@@ -124,6 +124,7 @@ alias venv-create="python -m venv .venv && activate"
 alias venv-reset="rm -rf .venv && venv-create"
 ### other tools
 alias black="black --line-length 120"
+alias todo="ultralist"
 ## misc
 alias reload="clear && source ~/.zshrc"
 ## python
