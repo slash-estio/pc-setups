@@ -112,7 +112,6 @@ export PATH="$PATH:/home/estio/.local/bin"
 # PyEnv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-
 eval "$(pyenv init - zsh)"
 pyenv global 3.13 >/dev/null 2>&1 || pyenv global 3.9.23
 # Poetry Config
@@ -123,6 +122,9 @@ export POETRY_VIRTUALENVS_IN_PROJECT="true"
 alias docker-ps-simple="docker ps --format \"{{.ID}}\t{{.Names}}\t{{.Status}}\""
 ## git
 alias git-root="git rev-parse --show-toplevel"
+groot() {
+  cd "$(git rev-parse --show-toplevel 2>/dev/null)" || echo "Not in a git repo"
+}
 ## python
 ### venv
 alias activate="source .venv/bin/activate"
